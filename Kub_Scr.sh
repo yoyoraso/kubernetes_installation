@@ -38,7 +38,7 @@ read ip
 
 ssh-keygen -t rsa
 ssh root@$ip mkdir -p .ssh
-cat .ssh/id_rsa.pub | ssh root@$ip 'cat >> .ssh/authorized_keys'
+cat /root/.ssh/id_rsa.pub | ssh root@$ip 'cat >> .ssh/authorized_keys'
 ssh root@$ip "chmod 700 .ssh; chmod 640 .ssh/authorized_keys"
 
 echo "
